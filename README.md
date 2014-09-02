@@ -16,6 +16,6 @@ A simple command line tool to aid in adding, subtracting, xor'ing, rol'ing, ror'
 
 + Examples:
   + python hc.py 0x7F XOR 0x3B ROL 0x21
-  + result: 0x88
+    + result: 0x88
   +  python hc.py --ascii 0x41 ROL 0x2d
-  + result: (
+    + result: (
