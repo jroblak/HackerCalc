@@ -1,7 +1,7 @@
 hacker calc
 =================
 
-A simple command line tool to aid in adding, subtracting, xor'ing, rol'ing, ror'ing, etc data of various sizes.
+A simple command line tool to aid in adding, subtracting, xor'ing, rol'ing, ror'ing, etc data of various sizes. ADD/SUB/ROT operations wrap as one would expect while debugging.
 
 **USAGE**
 
