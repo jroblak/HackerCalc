@@ -83,7 +83,7 @@ def parse(txt, base):
 
 @click.command()
 @click.option('--wordsize', default=8, help='Size of data being calculated (default: 8)')
-@click.option('--base', default=16, help='Format of data being calculated (default: 16 (hex))')
+@click.option('--base', default=16, help='Base of data being calculated (default: 16 (hex))')
 @click.option('--ascii/--no-ascii', default=False, help='Print result as ASCII (default: False)')
 @click.argument('calculation', nargs=-1)
 
@@ -93,7 +93,7 @@ def calculator(wordsize, base, calculation, ascii):
     
     if ascii:
         res = str(chr(int(res, base)))
-        
+
     try:
         click.echo('result: ' + res)
     except:

@@ -8,7 +8,7 @@ A simple command line tool to aid in adding, subtracting, xor'ing, rol'ing, ror'
 + python hc.py [OPTIONS] CALCULATION
 + Options:
   + --wordsize INTEGER    Size of data being calculated (default: 8) [a byte]
-  + --base INTEGER        Format of data being calculated (default: 16 (hex))
+  + --base INTEGER        Base of data being calculated (default: 16 (hex))
   + --ascii / --no-ascii  Print result as ASCII character (default: False)
   + --help                Show this message and exit.
 
