@@ -1,7 +1,7 @@
 import click
 import binascii
 
-OPS = ['ROR', 'ROL', 'XOR', '+', '-', 'ADD', 'SUB', '>>', '<<', 'SHL', 'SHR']
+OPS = ['ROR', 'ROL', 'XOR', '+', '-', 'ADD', 'SUB', 'SHL', 'SHR']
 SIZE = 8
 
 def unint(a, b):
@@ -12,7 +12,6 @@ def unint(a, b):
     else:
         return a
 
-#todo: make this more robust
 def intify(item, b):
     return int(item, b)
 
@@ -20,7 +19,7 @@ def shr(a, b):
     return a >> b
 
 def shl(a, b):
-    return a << b
+    return a << b & (2 ** SIZE - 1)
 
 def rol(a, b):
     res = (a << b % SIZE) & (2 ** SIZE - 1) | ((a & (2 ** SIZE - 1)) >> (SIZE - (b % SIZE)))
@@ -70,7 +69,12 @@ def parse(txt, base):
         if item.upper() in OPS:
             stack.append(item)
         else:
-            stack.append(intify(item, base))
+            try:
+                intd = intify(item, base)
+            except Exception:
+                return 'Invalid operation'
+
+            stack.append(intd)
 
         if (len(stack) == 3):
             b = stack.pop()
